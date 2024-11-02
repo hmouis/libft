@@ -6,7 +6,7 @@
 /*   By: hmouis <hmouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:51:26 by hmouis            #+#    #+#             */
-/*   Updated: 2024/10/30 16:10:28 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/02 12:14:52 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 #include <strings.h>
 #include <stdio.h>
 
@@ -38,4 +38,4 @@ int main()
    		printf("%d\n",s[i]);
 
 	 }
-}
+}*/

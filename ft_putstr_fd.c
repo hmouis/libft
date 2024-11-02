@@ -1,20 +1,25 @@
-#include <unistd.h>
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/02 12:33:22 by hmouis            #+#    #+#             */
+/*   Updated: 2024/11/02 12:34:24 by hmouis           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putstr_fd(char *s, int fd)
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (s[i] != '\0')
-    {
-        write(fd, &s[i], 1);
-        i++;
-    }
-}
-
-int main()
-{
-    char *s = "helllo caaa";
-    ft_putstr_fd(s,1);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

@@ -1,36 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/02 12:39:03 by hmouis            #+#    #+#             */
+/*   Updated: 2024/11/02 12:40:19 by hmouis           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ff(unsigned int i, char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    if (*c >= 'a' && *c <= 'z')
-        *c -= 32;
-}
+	unsigned int	i;
 
-void  ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-    unsigned int  i;
-
-    i = 0;
-    while (s[i] != '\0')
-    {
-        f(i, &s[i]);
-        write(1,&s[i],1);
-        i++;
-    }
-}
-
-#include <stdio.h>
-
-int main()
-{
-    char s[] = "1he1Heh hdahd";
-    void (*f)(unsigned int, char*);
-    f = ff;
-    
-    ft_striteri(s,f);
-    return (0);
-
-
-
-
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		write(1, &s[i], 1);
+		i++;
+	}
 }
