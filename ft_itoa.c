@@ -6,7 +6,7 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:18:41 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:26:01 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/03 16:03:30 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_mlc(int n)
 	return (arr);
 }
 
-char	*ft_itoa(int n)
+char	*fill(int n)
 {
 	char	*arr;
 	size_t	i;
@@ -91,11 +91,38 @@ char	*ft_itoa(int n)
 	arr[i] = '\0';
 	return (arr);
 }
-/*
-#include <stdio.h>
+
+char	*ft_itoa(int n)
+{
+	char	*arr;
+	size_t	i;
+	long	l;
+
+	i = 10;
+	if (n == -2147483648)
+	{
+		l = n;
+		arr = malloc(sizeof(char) * (11 + 1));
+		if (arr == NULL)
+			return (NULL);
+		l *= -1;
+		arr[0] = '-';
+		while (l > 0)
+		{
+			arr[i--] = l % 10 + '0';
+			l = l / 10;
+		}
+		arr[11] = '\0';
+		return (arr);
+	}
+	arr = fill(n);
+	return (arr);
+}
+/*#include <stdio.h>
+#include <stdlib.h>
 int main()
 {
-    char *a = ft_itoa(-2147483648);
-    printf("%s\n",a);
+
+    printf("%s\n",ft_itoa(-2147483648));
     return 0;
 }*/

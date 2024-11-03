@@ -6,7 +6,7 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:29:14 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:31:08 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/03 16:04:07 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	ft_putstr_fd(char *s, int fd)
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		write(fd, "\n", 1);
+	}
 }

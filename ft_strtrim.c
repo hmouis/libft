@@ -36,7 +36,7 @@ size_t	check_c(char c, char const *str)
 	return (0);
 }
 
-char	*ft_strdup(const char *s1, size_t start, size_t end)
+char	*ft_superdup(const char *s1, size_t start, size_t end)
 {
 	size_t	i;
 	char	*arr;
@@ -71,7 +71,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (check_c(s1[end - 1], set) == 1 && end > start)
 		end--;
-	trm_str = ft_strdup(s1, start, end);
+	trm_str = ft_superdup(s1, start, end);
 	return (trm_str);
 }
 /*

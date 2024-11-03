@@ -39,7 +39,7 @@ size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*ft_strdup(const char *s1, char c, size_t index)
+char	*ft_superdup(const char *s1, char c, size_t index)
 {
 	size_t	i;
 	char	*arr;
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (s[i] != '\0')
 		{
-			arr[words] = ft_strdup(s, c, i);
+			arr[words] = ft_superdup(s, c, i);
 			words++;
 		}
 		while (s[i] != c && s[i] != '\0')
