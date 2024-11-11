@@ -31,21 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new[i] = '\0';
 	return (new);
 }
-/*
-
-#include <stdio.h>
-
-int main()
-{
-    char *s = "1heHeh hdahd";
-    char (*d)(unsigned int, char);
-    d = ff;
-    char *a = ft_strmapi(s,d);
-    
-    printf("%s\n",a);
-    return (0);
-
-
-
-
-}*/

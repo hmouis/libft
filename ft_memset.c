@@ -6,7 +6,7 @@
 /*   By: hmouis <hmouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:14:42 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:27:33 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/04 18:48:32 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return ((unsigned char *)b);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-
-    char buffer[50]; 
-    memset(buffer, 5920,7);
-   
-    
-    printf("%s\n", buffer);
-    
-    return 0;
-}
-
-*/

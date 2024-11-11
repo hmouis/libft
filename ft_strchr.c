@@ -6,11 +6,11 @@
 /*   By: hmouis <hmouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:30:12 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:10:43 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/05 13:03:12 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,17 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s + i);
 		i++;
 	}
+	if ((char)c == '\0' && s[i] == '\0')
+		return ((char *)s + i);
 	return (NULL);
 }
-/*
-
-
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char s[] = "abcdefghegjdjfdkkfdj";
-	char *c = ft_strchr(s,'j');
-	printf("%s\n",c);
-	return (0);
-}*/

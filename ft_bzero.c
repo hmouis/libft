@@ -6,36 +6,13 @@
 /*   By: hmouis <hmouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:51:26 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:14:52 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/04 17:54:10 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }
-/*
-#include <strings.h>
-#include <stdio.h>
-
-
-
-int main()
-{
-	char s[] = "helooossd";
-	 ft_bzero(s,5);
-	 for (int  i = 0; i < sizeof(s);i++)
-	 {
-   		printf("%d\n",s[i]);
-
-	 }
-}*/

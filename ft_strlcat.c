@@ -6,18 +6,20 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:24:43 by hmouis            #+#    #+#             */
-/*   Updated: 2024/10/30 11:22:14 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/07 12:35:31 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
 
+	if (!dst && dstsize == 0)
+		return (ft_strlen(src));
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = 0;
@@ -31,26 +33,3 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
-/*
-
-#include <stdio.h>
-
-
-int main()
-{
-	char dst[50] = "";
-	char dstt[50] = "";
-	char src[] = "ds";
-
-	int d = strlcat(dst,src,2);
-	int fd = ft_strlcat(dstt,src,2);
-
-	printf("%d\n",d);
-	printf("%s\n",dst);
-	printf("----------------------\n");
-	printf("%d\n",fd);
-	printf("%s\n",dstt);
-	return (0);
-
-}
-*/

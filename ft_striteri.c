@@ -6,7 +6,7 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:39:03 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/02 12:40:19 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/05 19:20:51 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	while (s[i] != '\0')
 	{
 		f(i, &s[i]);
-		write(1, &s[i], 1);
 		i++;
 	}
 }

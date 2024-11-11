@@ -6,13 +6,15 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:06:16 by hmouis            #+#    #+#             */
-/*   Updated: 2024/10/24 16:07:02 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/05 09:51:49 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }

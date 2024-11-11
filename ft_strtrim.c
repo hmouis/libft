@@ -6,23 +6,13 @@
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:34:01 by hmouis            #+#    #+#             */
-/*   Updated: 2024/10/30 11:45:44 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/10 19:47:31 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-size_t	check_c(char c, char const *str)
+static size_t	check_c(char c, char const *str)
 {
 	size_t	i;
 
@@ -36,7 +26,7 @@ size_t	check_c(char c, char const *str)
 	return (0);
 }
 
-char	*ft_superdup(const char *s1, size_t start, size_t end)
+static char	*ft_superrdup(const char *s1, size_t start, size_t end)
 {
 	size_t	i;
 	char	*arr;
@@ -63,6 +53,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trm_str;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	start = 0;
 	s1_len = ft_strlen(s1);
@@ -71,19 +63,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (check_c(s1[end - 1], set) == 1 && end > start)
 		end--;
-	trm_str = ft_superdup(s1, start, end);
+	trm_str = ft_superrdup(s1, start, end);
 	return (trm_str);
 }
-/*
-
-#include <stdio.h>
-
-int main()
-{
-    char s[] = "ababaaaMy name is Simonbbaaabba";
-    char ss[] = "ab";
-
-    char *sss = ft_strtrim(s,ss);
-    printf("%s\n",sss);
-    return (0);
-}*/
