@@ -20,11 +20,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	i = ft_strlen(s);
-	if (start > i - 1)
+	if (start > i - 1 || s[0] == '\0')
 		return (ft_strdup(""));
 	if (len > i - start)
 		len = i - start;
-	substring = (char *)malloc(sizeof(char) * len + 1);
+	substring = malloc(sizeof(char) * len + 1);
 	if (!substring)
 		return (NULL);
 	i = 0;

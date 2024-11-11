@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmouis <hmouis@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 11:34:01 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/10 19:47:31 by hmouis           ###   ########.fr       */
+/*   Created: 2024/11/11 17:24:46 by hmouis            #+#    #+#             */
+/*   Updated: 2024/11/11 17:24:49 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
+	if (s1[0] == '\0')
+		return (ft_strdup(""));
 	i = 0;
 	start = 0;
 	s1_len = ft_strlen(s1);
