@@ -6,14 +6,11 @@
 /*   By: hmouis <hmouis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 22:41:57 by hmouis            #+#    #+#             */
-/*   Updated: 2024/11/08 16:31:27 by hmouis           ###   ########.fr       */
+/*   Updated: 2024/11/14 12:00:16 by hmouis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 
 static size_t	count_words(char const *s, char c)
 {
@@ -84,7 +81,7 @@ static char	**fill(const char *str, char c, char **arr, size_t count)
 	size_t	s_len;
 
 	words = 0;
-	s_len = strlen(str);
+	s_len = ft_strlen(str);
 	i = 0;
 	while (i < s_len && count > 0)
 	{
@@ -114,10 +111,7 @@ char	**ft_split(char const *s, char c)
 	count = count_words(s, c);
 	new_arr = malloc(sizeof(char *) * (count + 1));
 	if (!new_arr)
-	{
-		free(new_arr);
 		return (NULL);
-	}
 	new_arr = fill(s, c, new_arr, count);
 	return (new_arr);
 }

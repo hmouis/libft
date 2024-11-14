@@ -9,22 +9,14 @@ ft_isalpha.c    ft_memmove.c    ft_strdup.c     ft_strrchr.c\
 ft_isascii.c    ft_memset.c     ft_striteri.c   ft_strtrim.c\
 ft_strlcpy.c    ft_substr.c     
 
-SRCBONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c  ft_lstadd_back_bonus.c\
-		   ft_lstdelone_bonus.c 
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OBJS = $(SRC:%.c=%.o)
-BOBJS = $(SRCBONUS:%.c=%.o)
-SANDB = 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
-
-BONUS: $(BOBJS)
-	ar rcs $@ $^
+	ar rs $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

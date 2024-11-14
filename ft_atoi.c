@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == ' ' || c == '\n'
 		|| c == '\v' || c == '\r' || c == '\f')
@@ -44,19 +44,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-/*
-#include <stdio.h>
-
-#include <stdlib.h>
-
-int main()
-{
-    char s[] = "-2147483649";
-    char p[] = "-2147483649";
-    
-    int aa = atoi(s);
-    int vv = ft_atoi(p);
-    printf("%d------------>%d",aa,vv);
-    
-    return (0);
-}*/

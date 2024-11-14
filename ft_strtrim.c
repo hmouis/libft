@@ -35,7 +35,7 @@ static char	*ft_superrdup(const char *s1, size_t start, size_t end)
 	arr = (char *)malloc(sizeof(char) * ((end - start) + 1));
 	if (arr == NULL)
 		return (NULL);
-	while (s1[start] != '0' && start < end)
+	while (s1[start] != '\0' && start < end)
 	{
 		arr[i] = s1[start];
 		start++;
@@ -53,10 +53,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*trm_str;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
 	if (s1[0] == '\0')
 		return (ft_strdup(""));
 	i = 0;

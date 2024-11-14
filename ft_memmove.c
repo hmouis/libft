@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
+	if (dst == src)
+		return (dst);
 	dst_c = (unsigned char *)dst;
 	src_c = (unsigned char *)src;
 	if (dst_c > src_c)
@@ -30,11 +32,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (i < len)
-		{
-			dst_c[i] = src_c[i];
-			i++;
-		}
+		ft_memcpy(dst, src, len);
 	}
 	return (dst_c);
 }
