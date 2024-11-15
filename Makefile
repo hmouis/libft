@@ -16,7 +16,7 @@ OBJS = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rs $@ $^
+	ar rcs $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

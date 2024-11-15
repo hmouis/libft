@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
 int					ft_atoi(const char *str);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_bzero(void *s, size_t n);
