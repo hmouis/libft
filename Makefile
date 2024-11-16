@@ -11,12 +11,12 @@ ft_strlcpy.c    ft_substr.c
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-OBJS = $(SRC:%.c=%.o)
+OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	ar rcs $@ $?
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -28,3 +28,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all re clean fclean

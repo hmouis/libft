@@ -66,3 +66,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trm_str = ft_superrdup(s1, start, end);
 	return (trm_str);
 }
+#include <stdio.h>
+
+int main()
+{
+    printf("%s\n",ft_strtrim("asd0asd0asd0asd0asd0hel0loasd0","0sa"));
+}
