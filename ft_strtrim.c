@@ -50,25 +50,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	start;
 	size_t	end;
-	char	*trm_str;
+	char	*new_str;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	if (s1[0] == '\0')
 		return (ft_strdup(""));
 	i = 0;
 	start = 0;
-    end = ft_strlen(s1);
+	end = ft_strlen(s1);
 	while (check_c(s1[start], set) == 1 && start < end)
 		start++;
 	while (check_c(s1[end - 1], set) == 1 && end > start)
 		end--;
-	trm_str = ft_superrdup(s1, start, end);
-	return (trm_str);
-}
-#include <stdio.h>
-
-int main()
-{
-    printf("%s\n",ft_strtrim("asd0asd0asd0asd0asd0hel0loasd0","0sa"));
+	new_str = ft_superrdup(s1, start, end);
+	return (new_str);
 }
